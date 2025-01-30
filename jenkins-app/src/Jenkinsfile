@@ -6,5 +6,18 @@ pipeline{
                 sh 'echo "Hello from Jenkins Demo"'
             }
         }
+        stage('Build and Install'){
+            agent{
+                docker{
+                    image 'node:23-alpine'
+                    reuseNode true
+                }
+            }
+            steps{
+                sh 'npm ci'
+                sh 'npm run build'
+                sh 'ls'
+            }
+        }
     }
 }
