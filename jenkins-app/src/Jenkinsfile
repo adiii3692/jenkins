@@ -1,0 +1,10 @@
+pipeline{
+    agent any
+    stages{
+        stage('Demo Jenkins'){
+            steps{
+                sh 'echo "Hello from Jenkins Demo"'
+            }
+        }
+    }
+}
