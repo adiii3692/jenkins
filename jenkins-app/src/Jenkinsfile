@@ -14,11 +14,14 @@ pipeline{
                 }
             }
             steps{
-                sh 'cd jenkins-app/src/'
-                sh 'ls -la'
-                sh 'npm ci'
-                sh 'npm run build'
-                sh 'ls'
+                sh 'pwd'
+                dir('jenkins-app/src/'){
+                    sh 'pwd'
+                }
+                // sh 'ls -la'
+                // sh 'npm ci'
+                // sh 'npm run build'
+                // sh 'ls'
             }
         }
     }
