@@ -14,7 +14,8 @@ pipeline{
                 }
             }
             steps{
-                sh 'npm i'
+                sh 'cd jenkins-app/src/'
+                sh 'npm ci'
                 sh 'npm run build'
                 sh 'ls'
             }
